@@ -1,6 +1,6 @@
 {
   "name": "remixicon-native",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "RemixIcon for React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -37,7 +37,14 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "remixicon",
+    "rn",
+    "ri",
+    "icons",
+    "remix-icon",
+    "remixicon react native",
+    "remix icon react native"
   ],
   "repository": {
     "type": "git",

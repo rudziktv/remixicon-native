@@ -1,6 +1,17 @@
 # remixicon-native
 
-RemixIcon for React Native
+[RemixIcon](https://remixicon.com/) for React Native
+
+[RemixIcon](https://remixicon.com/) - version 4.0.0
+
+This package provides RemixIcon component:
+
+- fully static types (even name prop)
+- newest RemixIcon version (4.0.0 contains all new icons)
+- simple
+- built with [react-native-svg](https://github.com/software-mansion/react-native-svg)
+
+Hope it will be useful for you.
 
 ## Installation
 
