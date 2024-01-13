@@ -11,11 +11,11 @@ npm install remixicon-native
 ## Usage
 
 ```js
-import { multiply } from 'remixicon-native';
+import { RemixIcon } from 'remixicon-native';
 
 // ...
-
-const result = await multiply(3, 7);
+<RemixIcon name="remixicon-line" color="black" size={24} />;
+///...
 ```
 
 ## Contributing
