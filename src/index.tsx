@@ -1,5 +1,2 @@
-export function multiply(a: number, b: number): Promise<number> {
-  return Promise.resolve(a * b);
-}
-
+export { default as RemixIconAnimated } from './RemixIconAnimated';
 export { default as RemixIcon } from './RemixIcon';
