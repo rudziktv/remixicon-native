@@ -9,25 +9,29 @@ This package provides RemixIcon component:
 - fully static types (even name prop)
 - newest RemixIcon version (4.2.0 contains all new icons)
 - simple
-- built with [react-native-svg](https://github.com/software-mansion/react-native-svg)
+- built with [react-native-svg](https://github.com/software-mansion/react-native-svg), [react-native-reanimated](https://github.com/software-mansion/react-native-reanimated)
+- animation support
 
 Hope it will be useful for you.
 
 ## Installation
 
 #### Expo
+
 ```sh
 npx expo install remixicon-native
 ```
 
 #### React Native CLI
+
 ```sh
-npm install remixicon-native
+npm i remixicon-native
 ```
 
-If [react-native-svg](https://github.com/software-mansion/react-native-svg) hasn't been installed automatically, do it manually
+If [react-native-svg](https://github.com/software-mansion/react-native-svg), [react-native-reanimated](https://github.com/software-mansion/react-native-reanimated) haven't been installed automatically, do it manually
+
 ```sh
-npm install react-native-svg
+npm install react-native-svg react-native-reanimated
 ```
 
 ## Usage
@@ -36,7 +40,12 @@ npm install react-native-svg
 import { RemixIcon } from 'remixicon-native';
 
 // ...
-<RemixIcon name="remixicon-line" color="black" size={24} />;
+<RemixIcon
+  name="remixicon-line" //required
+  color="white" //optional, default = 'white'
+  size={36} //optional, default = 24
+  animated_props={animated} //optional, from reanimated
+/>;
 ///...
 ```
 
