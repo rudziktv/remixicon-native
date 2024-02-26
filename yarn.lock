@@ -1181,6 +1181,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/plugin-transform-object-assign@npm:^7.16.7":
+  version: 7.23.3
+  resolution: "@babel/plugin-transform-object-assign@npm:7.23.3"
+  dependencies:
+    "@babel/helper-plugin-utils": ^7.22.5
+  peerDependencies:
+    "@babel/core": ^7.0.0-0
+  checksum: c19eafedfe3197937aab79b4c6129f9fb7138b0173d3741d1068f589ee0e238f49b2d7a392d7fb8d1218f526f1279bda8e941b111f1698ea3e35e2d0ee60a94e
+  languageName: node
+  linkType: hard
+
 "@babel/plugin-transform-object-rest-spread@npm:^7.23.4":
   version: 7.23.4
   resolution: "@babel/plugin-transform-object-rest-spread@npm:7.23.4"
@@ -1640,7 +1651,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-typescript@npm:^7.13.0, @babel/preset-typescript@npm:^7.17.12":
+"@babel/preset-typescript@npm:^7.13.0, @babel/preset-typescript@npm:^7.16.7, @babel/preset-typescript@npm:^7.17.12":
   version: 7.23.3
   resolution: "@babel/preset-typescript@npm:7.23.3"
   dependencies:
@@ -14844,6 +14855,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-reanimated@npm:^3.7.1":
+  version: 3.7.1
+  resolution: "react-native-reanimated@npm:3.7.1"
+  dependencies:
+    "@babel/plugin-transform-object-assign": ^7.16.7
+    "@babel/preset-typescript": ^7.16.7
+    convert-source-map: ^2.0.0
+    invariant: ^2.2.4
+  peerDependencies:
+    "@babel/core": ^7.0.0-0
+    "@babel/plugin-proposal-nullish-coalescing-operator": ^7.0.0-0
+    "@babel/plugin-proposal-optional-chaining": ^7.0.0-0
+    "@babel/plugin-transform-arrow-functions": ^7.0.0-0
+    "@babel/plugin-transform-shorthand-properties": ^7.0.0-0
+    "@babel/plugin-transform-template-literals": ^7.0.0-0
+    react: "*"
+    react-native: "*"
+  checksum: 5adc6d07ac519992f19dae8d627ddf65fe7d2d80393e53aac06946f7cee3819440c30469ea668bac81af0ac557143fe1c06911d36899fc50e947f05a15950f37
+  languageName: node
+  linkType: hard
+
 "react-native-svg@npm:^14.1.0":
   version: 14.1.0
   resolution: "react-native-svg@npm:14.1.0"
@@ -15318,6 +15350,7 @@ __metadata:
     react: 18.2.0
     react-native: 0.72.6
     react-native-builder-bob: ^0.20.0
+    react-native-reanimated: ^3.7.1
     react-native-svg: ^14.1.0
     release-it: ^15.0.0
     typescript: ^5.0.2

@@ -170,9 +170,6 @@
   },
   "dependencies": {
     "react-native-reanimated": "^3.7.1",
-    "react-native-reanimated": "^3.7.1",
-    "react-native-reanimated": "^3.7.1",
-    "react-native-reanimated": "^3.7.1",
     "react-native-svg": "^14.1.0"
   }
 }
