@@ -2,6 +2,7 @@ import { type RemixIconType } from './RemixIconType';
 import { Text } from 'react-native';
 import * as Icon from './icons';
 import React from 'react';
+import type { AnimatedProps } from 'react-native-reanimated';
 import type { SvgProps } from 'react-native-svg';
 
 const RemixIcon = ({
@@ -20,7 +21,9 @@ const RemixIcon = ({
       .map((s) => s[0]?.toUpperCase() + s.substring(1))
       .join('');
 
-  const Component = (Icon as any)[iconComponentName] as React.FC<SvgProps>;
+  const Component = (Icon as any)[iconComponentName] as React.FC<
+    AnimatedProps<SvgProps>
+  >;
 
   return Component ? (
     <Component fill={color} width={size} height={size} {...props} />
@@ -29,7 +32,7 @@ const RemixIcon = ({
   );
 };
 
-export interface RemixIconProps extends SvgProps {
+export interface RemixIconProps extends AnimatedProps<SvgProps> {
   name: RemixIconType;
   size?: number;
   color?: string;

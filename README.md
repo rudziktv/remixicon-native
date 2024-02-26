@@ -17,16 +17,19 @@ Hope it will be useful for you.
 ## Installation
 
 #### Expo
+
 ```sh
 npx expo install remixicon-native
 ```
 
 #### React Native CLI
+
 ```sh
 npm i remixicon-native
 ```
 
 If [react-native-svg](https://github.com/software-mansion/react-native-svg), [react-native-reanimated](https://github.com/software-mansion/react-native-reanimated) haven't been installed automatically, do it manually
+
 ```sh
 npm install react-native-svg react-native-reanimated
 ```
@@ -34,11 +37,15 @@ npm install react-native-svg react-native-reanimated
 ## Usage
 
 ```js
-import { RemixIcon, RemixIconAnimated } from 'remixicon-native';
+import { RemixIcon } from 'remixicon-native';
 
 // ...
-<RemixIcon name="remixicon-line" color="black" size={24} />;
-<RemixIconAnimated name="remixicon-line" color="white" size={36} animated_props={animated}>
+<RemixIcon
+  name="remixicon-line" //required
+  color="white" //optional, default = 'white'
+  size={36} //optional, default = 24
+  animated_props={animated} //optional, from reanimated
+/>;
 ///...
 ```
 
