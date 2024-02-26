@@ -26,9 +26,9 @@ npx expo install remixicon-native
 npm i remixicon-native
 ```
 
-If [react-native-svg](https://github.com/software-mansion/react-native-svg) hasn't been installed automatically, do it manually
+If [react-native-svg](https://github.com/software-mansion/react-native-svg), [react-native-reanimated](https://github.com/software-mansion/react-native-reanimated) haven't been installed automatically, do it manually
 ```sh
-npm install react-native-svg
+npm install react-native-svg react-native-reanimated
 ```
 
 ## Usage
