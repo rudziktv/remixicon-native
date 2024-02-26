@@ -2,7 +2,11 @@ import { type RemixIconType } from './RemixIconType';
 import { Text, type ColorValue } from 'react-native';
 import * as Icon from './icons';
 import React from 'react';
-import type { AnimatedProps, SharedValue } from 'react-native-reanimated';
+import {
+  useAnimatedProps,
+  type AnimatedProps,
+  type SharedValue,
+} from 'react-native-reanimated';
 import type { NumberProp, SvgProps } from 'react-native-svg';
 
 const RemixIcon = ({
@@ -26,13 +30,14 @@ const RemixIcon = ({
     AnimatedProps<SvgProps>
   >;
 
+  const animated = useAnimatedProps<AnimatedProps<SvgProps>>(() => ({
+    width: size,
+    height: size,
+    fill: color,
+  }));
+
   return Component ? (
-    <Component
-      animatedProps={
-        animatedProps || { width: size, height: size, fill: color }
-      }
-      {...props}
-    />
+    <Component animatedProps={animatedProps || animated} {...props} />
   ) : (
     <Text>Icon not found</Text>
   );
