@@ -12,6 +12,7 @@ const RemixIcon = ({
   width: _,
   height: __,
   fill: ___,
+  animatedProps,
   ...props
 }: RemixIconProps) => {
   const iconComponentName =
@@ -26,7 +27,12 @@ const RemixIcon = ({
   >;
 
   return Component ? (
-    <Component fill={color} width={size} height={size} {...props} />
+    <Component
+      animatedProps={
+        animatedProps || { width: size, height: size, fill: color }
+      }
+      {...props}
+    />
   ) : (
     <Text>Icon not found</Text>
   );
