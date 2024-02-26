@@ -5,7 +5,7 @@ import type { AnimatedProps } from 'react-native-reanimated';
 
 const SvgPentagonFill = (props: AnimatedProps<SvgProps>) => (
   <AnimatedSvg viewBox="0 0 24 24" {...props}>
-    <Path d="M12.0001 0.700195L22.7471 8.5083L18.6421 21.1421H5.35814L1.25317 8.5083L12.0001 0.700195Z" />
+    <Path d="M12.0004 0.700195L22.7473 8.5083L18.6423 21.1421H5.35838L1.25342 8.5083L12.0004 0.700195Z" />
   </AnimatedSvg>
 );
 
