@@ -15,8 +15,19 @@ Hope it will be useful for you.
 
 ## Installation
 
+#### Expo
+```sh
+npx expo install remixicon-native
+```
+
+#### React Native CLI
 ```sh
 npm install remixicon-native
+```
+
+If [react-native-svg](https://github.com/software-mansion/react-native-svg) hasn't been installed automatically, do it manually
+```sh
+npm install react-native-svg
 ```
 
 ## Usage
