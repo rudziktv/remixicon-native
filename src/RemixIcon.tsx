@@ -1,9 +1,9 @@
 import { type RemixIconType } from './RemixIconType';
-import { Text } from 'react-native';
+import { Text, type ColorValue } from 'react-native';
 import * as Icon from './icons';
 import React from 'react';
-import type { AnimatedProps } from 'react-native-reanimated';
-import type { SvgProps } from 'react-native-svg';
+import type { AnimatedProps, SharedValue } from 'react-native-reanimated';
+import type { NumberProp, SvgProps } from 'react-native-svg';
 
 const RemixIcon = ({
   name = 'remixicon-line',
@@ -34,8 +34,8 @@ const RemixIcon = ({
 
 export interface RemixIconProps extends AnimatedProps<SvgProps> {
   name: RemixIconType;
-  size?: number;
-  color?: string;
+  size?: NumberProp | SharedValue<NumberProp | undefined>;
+  color?: ColorValue | SharedValue<ColorValue | undefined>;
 }
 
 export default RemixIcon;
