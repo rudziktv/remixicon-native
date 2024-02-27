@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { Path, type SvgProps } from 'react-native-svg';
-import { AnimatedSvg } from '../AnimatedSvg';
-import type { AnimatedProps } from 'react-native-reanimated';
+import { Svg, Path } from 'react-native-svg';
+import type { IconProps } from '../IconProps';
 
-const SvgContractLeftRightFill = (props: AnimatedProps<SvgProps>) => (
-  <AnimatedSvg viewBox="0 0 24 24" {...props}>
+const SvgContractLeftRightFill = (props: IconProps) => (
+  <Svg viewBox="0 0 24 24" ref={props.reference} {...props}>
     <Path d="M5 18 11 12 5 6V18ZM19 6 13 12 19 18V6Z" />
-  </AnimatedSvg>
+  </Svg>
 );
 
 export default SvgContractLeftRightFill;

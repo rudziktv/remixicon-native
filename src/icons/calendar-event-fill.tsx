@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { Path, type SvgProps } from 'react-native-svg';
-import { AnimatedSvg } from '../AnimatedSvg';
-import type { AnimatedProps } from 'react-native-reanimated';
+import { Svg, Path } from 'react-native-svg';
+import type { IconProps } from '../IconProps';
 
-const SvgCalendarEventFill = (props: AnimatedProps<SvgProps>) => (
-  <AnimatedSvg viewBox="0 0 24 24" {...props}>
+const SvgCalendarEventFill = (props: IconProps) => (
+  <Svg viewBox="0 0 24 24" ref={props.reference} {...props}>
     <Path d="M17 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9V3H15V1H17V3ZM4 9V19H20V9H4ZM6 13H11V17H6V13Z" />
-  </AnimatedSvg>
+  </Svg>
 );
 
 export default SvgCalendarEventFill;

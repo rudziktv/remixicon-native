@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { Path, type SvgProps } from 'react-native-svg';
-import { AnimatedSvg } from '../AnimatedSvg';
-import type { AnimatedProps } from 'react-native-reanimated';
+import { Svg, Path } from 'react-native-svg';
+import type { IconProps } from '../IconProps';
 
-const SvgArrowDownSFill = (props: AnimatedProps<SvgProps>) => (
-  <AnimatedSvg viewBox="0 0 24 24" {...props}>
+const SvgArrowDownSFill = (props: IconProps) => (
+  <Svg viewBox="0 0 24 24" ref={props.reference} {...props}>
     <Path d="M12 16L6 10H18L12 16Z" />
-  </AnimatedSvg>
+  </Svg>
 );
 
 export default SvgArrowDownSFill;

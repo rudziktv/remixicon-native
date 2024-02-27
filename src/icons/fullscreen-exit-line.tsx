@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { Path, type SvgProps } from 'react-native-svg';
-import { AnimatedSvg } from '../AnimatedSvg';
-import type { AnimatedProps } from 'react-native-reanimated';
+import { Svg, Path } from 'react-native-svg';
+import type { IconProps } from '../IconProps';
 
-const SvgFullscreenExitLine = (props: AnimatedProps<SvgProps>) => (
-  <AnimatedSvg viewBox="0 0 24 24" {...props}>
+const SvgFullscreenExitLine = (props: IconProps) => (
+  <Svg viewBox="0 0 24 24" ref={props.reference} {...props}>
     <Path d="M18 7H22V9H16V3H18V7ZM8 9H2V7H6V3H8V9ZM18 17V21H16V15H22V17H18ZM8 15V21H6V17H2V15H8Z" />
-  </AnimatedSvg>
+  </Svg>
 );
 
 export default SvgFullscreenExitLine;
