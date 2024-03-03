@@ -1,11 +1,9 @@
 import * as React from 'react';
-import { Path, type SvgProps } from 'react-native-svg';
-import { AnimatedSvg } from '../AnimatedSvg';
-import type { AnimatedProps } from 'react-native-reanimated';
-
-const SvgArrowDropUpFill = (props: AnimatedProps<SvgProps>) => (
-  <AnimatedSvg viewBox="0 0 24 24" {...props}>
-    <Path d="M12 10L16 14H8L12 10Z" />
+import type { IconProps } from '../IconProps';
+import { AnimatedPath, AnimatedSvg } from '../AnimatedSvg';
+const SvgArrowDropUpFill = ({ svg, path }: IconProps) => (
+  <AnimatedSvg viewBox="0 0 24 24" {...svg}>
+    <AnimatedPath {...path} d="M12 10L16 14H8L12 10Z" />
   </AnimatedSvg>
 );
 
