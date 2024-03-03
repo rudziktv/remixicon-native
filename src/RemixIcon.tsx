@@ -1,19 +1,20 @@
-import { type RemixIconType } from './RemixIconType';
-import { Text, type ColorValue } from 'react-native';
+import React from 'react';
 import * as Icon from './icons';
-import React, { forwardRef } from 'react';
-import { Svg, type NumberProp } from 'react-native-svg';
+import { type RemixIconType } from './RemixIconType';
+import { Text } from 'react-native';
+import type { NumberProp, PathProps, SvgProps } from 'react-native-svg';
 import type { IconProps } from './IconProps';
-import Animated from 'react-native-reanimated';
+import {
+  createAnimatedPropAdapter,
+  processColor,
+  useAnimatedProps,
+  type SharedValue,
+} from 'react-native-reanimated';
 
-const IconComponent = ({
+const RemixIcon = ({
   name = 'remixicon-line',
   size = 24,
   color = 'white',
-  width: _,
-  height: __,
-  fill: ___,
-  ...props
 }: RemixIconProps) => {
   const iconComponentName =
     'Svg' +
@@ -24,23 +25,48 @@ const IconComponent = ({
 
   const Component = (Icon as any)[iconComponentName] as React.FC<IconProps>;
 
+  const animatedSvg = useAnimatedProps<SvgProps>(() => ({
+    width:
+      typeof size === 'number' || typeof size === 'string' ? size : size.value,
+    height:
+      typeof size === 'number' || typeof size === 'string' ? size : size.value,
+  }));
+
+  const animatedPath = useAnimatedProps<PathProps>(
+    () => ({
+      fill: typeof color === 'string' ? color : color.value,
+    }),
+    [],
+    createAnimatedPropAdapter(
+      (props) => {
+        if (Object.keys(props).includes('fill')) {
+          props.fill = { type: 0, payload: processColor(props.fill) };
+        }
+        if (Object.keys(props).includes('stroke')) {
+          props.stroke = {
+            type: 0,
+            payload: processColor(props.stroke),
+          };
+        }
+      },
+      ['fill', 'stroke']
+    )
+  );
+
   return Component ? (
-    <Component width={size} height={size} fill={color} {...props} />
+    <Component
+      svg={{ animatedProps: animatedSvg }}
+      path={{ animatedProps: animatedPath }}
+    />
   ) : (
     <Text>Icon not found</Text>
   );
 };
 
-const RemixIcon = Animated.createAnimatedComponent(
-  forwardRef<Svg, RemixIconProps>(({ ...props }, ref) => (
-    <IconComponent reference={ref} {...props} />
-  ))
-);
-
-export interface RemixIconProps extends IconProps {
+export interface RemixIconProps {
   name: RemixIconType;
-  size?: NumberProp;
-  color?: ColorValue;
+  size?: NumberProp | SharedValue<NumberProp>;
+  color?: string | SharedValue<string>;
 }
 
 export default RemixIcon;

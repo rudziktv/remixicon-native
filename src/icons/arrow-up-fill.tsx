@@ -1,11 +1,10 @@
 import * as React from 'react';
-import { Svg, Path } from 'react-native-svg';
 import type { IconProps } from '../IconProps';
-
-const SvgArrowUpFill = (props: IconProps) => (
-  <Svg viewBox="0 0 24 24" ref={props.reference} {...props}>
-    <Path d="M13 12V20H11V12H4L12 4L20 12H13Z" />
-  </Svg>
+import { AnimatedPath, AnimatedSvg } from '../AnimatedSvg';
+const SvgArrowUpFill = ({ svg, path }: IconProps) => (
+  <AnimatedSvg viewBox="0 0 24 24" {...svg}>
+    <AnimatedPath {...path} d="M13 12V20H11V12H4L12 4L20 12H13Z" />
+  </AnimatedSvg>
 );
 
 export default SvgArrowUpFill;

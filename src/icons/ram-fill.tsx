@@ -1,11 +1,13 @@
 import * as React from 'react';
-import { Svg, Path } from 'react-native-svg';
 import type { IconProps } from '../IconProps';
-
-const SvgRamFill = (props: IconProps) => (
-  <Svg viewBox="0 0 24 24" ref={props.reference} {...props}>
-    <Path d="M2 5C1.44772 5 1 5.44772 1 6V18C1 18.5523 1.44772 19 2 19H5V17H7V19H9V17H11V19H13V17H15V19H17V17H19V19H22C22.5523 19 23 18.5523 23 18V6C23 5.44772 22.5523 5 22 5H2ZM5 9H11V12H5V9ZM13 9H19V12H13V9Z" />
-  </Svg>
+import { AnimatedPath, AnimatedSvg } from '../AnimatedSvg';
+const SvgRamFill = ({ svg, path }: IconProps) => (
+  <AnimatedSvg viewBox="0 0 24 24" {...svg}>
+    <AnimatedPath
+      {...path}
+      d="M2 5C1.44772 5 1 5.44772 1 6V18C1 18.5523 1.44772 19 2 19H5V17H7V19H9V17H11V19H13V17H15V19H17V17H19V19H22C22.5523 19 23 18.5523 23 18V6C23 5.44772 22.5523 5 22 5H2ZM5 9H11V12H5V9ZM13 9H19V12H13V9Z"
+    />
+  </AnimatedSvg>
 );
 
 export default SvgRamFill;

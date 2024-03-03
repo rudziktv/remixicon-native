@@ -1,6 +1,7 @@
-import type React from 'react';
-import type { Svg, SvgProps } from 'react-native-svg';
+import type { AnimatedProps } from 'react-native-reanimated';
+import type { PathProps, SvgProps } from 'react-native-svg';
 
-export interface IconProps extends SvgProps {
-  reference?: React.Ref<Svg>;
+export interface IconProps {
+  svg?: AnimatedProps<SvgProps>;
+  path?: AnimatedProps<PathProps>;
 }
