@@ -44,7 +44,7 @@ import { RemixIcon } from 'remixicon-native';
   name="remixicon-line" //required
   color="white" //optional, default = 'white'
   size={36} //optional, default = 24
-  animated_props={animated} //optional, from reanimated
+  //to animate color or size, simply pass SharedValue (not SharedValue.value!!)
 />;
 ///...
 ```
