@@ -1,6 +1,6 @@
 {
   "name": "remixicon-native",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "RemixIcon for React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -169,7 +169,7 @@
     ]
   },
   "dependencies": {
-    "react-native-reanimated": "^3.7.1",
+    "react-native-reanimated": "^3.6.1",
     "react-native-svg": "^14.1.0"
   }
 }
