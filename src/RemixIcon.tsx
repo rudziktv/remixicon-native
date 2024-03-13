@@ -27,14 +27,14 @@ const RemixIcon = ({
 
   const animatedSvg = useAnimatedProps<SvgProps>(() => ({
     width:
-      typeof size === 'number' || typeof size === 'string' ? size : size.value,
+      typeof size !== 'number' && typeof size !== 'string' ? size.value : 0,
     height:
-      typeof size === 'number' || typeof size === 'string' ? size : size.value,
+      typeof size !== 'number' && typeof size !== 'string' ? size.value : 0,
   }));
 
   const animatedPath = useAnimatedProps<PathProps>(
     () => ({
-      fill: typeof color === 'string' ? color : color.value,
+      fill: typeof color !== 'string' ? color.value : 'rgba(255,255,255,1)',
     }),
     [],
     createAnimatedPropAdapter(
@@ -53,11 +53,21 @@ const RemixIcon = ({
     )
   );
 
+  const svgProps =
+    typeof size !== 'number' && typeof size !== 'string'
+      ? { animatedProps: animatedSvg }
+      : {
+          width: size,
+          height: size,
+        };
+
+  const pathProps =
+    typeof color !== 'string'
+      ? { animatedProps: animatedPath }
+      : { fill: color };
+
   return Component ? (
-    <Component
-      svg={{ animatedProps: animatedSvg }}
-      path={{ animatedProps: animatedPath }}
-    />
+    <Component svg={svgProps} path={pathProps} />
   ) : (
     <Text>Icon not found</Text>
   );
