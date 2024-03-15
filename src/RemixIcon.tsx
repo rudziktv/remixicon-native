@@ -36,7 +36,7 @@ const RemixIcon = ({
     () => ({
       fill: typeof color !== 'string' ? color.value : 'rgba(255,255,255,1)',
     }),
-    [],
+    [color],
     createAnimatedPropAdapter(
       (props) => {
         if (Object.keys(props).includes('fill')) {
